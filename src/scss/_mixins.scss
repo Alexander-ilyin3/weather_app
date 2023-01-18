@@ -1,0 +1,22 @@
+@mixin light-shadow() {
+  $shadow_light: 2px 14px 14px rgba(190, 204, 213, 0.09);
+}
+
+@mixin darken-on-hover($color) {
+  &:hover {
+    background-color: darken($color: $color, $amount: 10);
+  }
+}
+
+@mixin lighten-on-hover($color) {
+  &:active {
+    background-color: lighten($color: $color, $amount: 10);
+  }
+}
+
+@mixin on-click-coloristic($color) {
+  @include darken-on-hover($color);
+  @include lighten-on-hover($color);
+
+  cursor: pointer;
+}
