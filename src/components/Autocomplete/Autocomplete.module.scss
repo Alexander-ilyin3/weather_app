@@ -1,0 +1,19 @@
+@import '/src/scss/main.scss';
+
+.Root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  input {
+    min-height: 48px;
+
+    border-radius: $border-radius-8;
+    border: 1px solid $gray-100;
+    outline: none;
+
+    padding: 0 8px;
+
+    color: $gray-800;
+  }
+}
