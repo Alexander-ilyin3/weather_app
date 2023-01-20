@@ -7,7 +7,6 @@ import config from 'src/config';
 
 export const useGetCities = (inputValue: string) => {
   const [cities, setCities] = useState<CityDto[]>([]);
-
   const getCities = useCallback(async () => {
     console.log('evaluating...', inputValue);
     const response = await CitiesApi.getCities({ appid: config.appid, q: `${inputValue},,UA`, limit: 5 });
@@ -18,6 +17,7 @@ export const useGetCities = (inputValue: string) => {
   useEffect(() => {
     const request = async () => {
       if (!inputValue || inputValue.length < 2) {
+        setCities([]);
         return;
       }
 
