@@ -2,13 +2,13 @@ import { AxiosResponse } from 'axios';
 
 import { ApiRequestService } from '@services/api-request/api-request';
 
-import { WeatherDto } from './models/weather.dto';
+import { WeatherResponseDto } from './models/weather.dto';
 import { GetWeatherParams } from './models/weather.query';
 import { DateRangeButtonOptions } from 'src/components/DateRangeOptions/DateRangeOptions';
 import config from 'src/config';
 
 export abstract class WeatherApi {
-  static async getWeather({ ...params }: GetWeatherParams): Promise<AxiosResponse<WeatherDto>> {
+  static async getWeather({ ...params }: GetWeatherParams): Promise<AxiosResponse<WeatherResponseDto>> {
     return ApiRequestService.get('data/2.5/forecast', {
       params: {
         ...params,

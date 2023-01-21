@@ -1,5 +1,6 @@
 import { citiesSlice } from './slices/cities';
 import { dateRangeSlice } from './slices/dateRange';
+import { weatherResponseSlice } from './slices/weatherResponse';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
@@ -7,6 +8,7 @@ export const store = configureStore({
   reducer: {
     city: citiesSlice.reducer,
     dateRange: dateRangeSlice.reducer,
+    weatherResponse: weatherResponseSlice.reducer,
   },
 });
 
