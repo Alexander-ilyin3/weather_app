@@ -42,7 +42,7 @@ export const Autocomplete = <T,>({
         autoComplete="off"
       />
       {!!autocompleteData.length && isOpenFlag && (
-        <div>
+        <div className={s.dataWrapper}>
           {autocompleteData.map((item, i) => (
             <div
               className={s.RenderItemContainer}

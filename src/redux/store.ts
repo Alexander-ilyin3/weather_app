@@ -1,10 +1,12 @@
 import { citiesSlice } from './slices/cities';
+import { dateRangeSlice } from './slices/dateRange';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
   // reducer: citiesSlice.reducer,
   reducer: {
     city: citiesSlice.reducer,
+    dateRange: dateRangeSlice.reducer,
   },
 });
 

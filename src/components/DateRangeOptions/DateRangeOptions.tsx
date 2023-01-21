@@ -1,7 +1,9 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button } from '../Button/Button';
+import { useAppDispatch } from 'src/hooks';
+import { saveDateRange } from 'src/redux/slices/dateRange';
 
 import s from './DateRangeOptions.module.scss';
 
@@ -14,6 +16,11 @@ export enum DateRangeButtonOptions {
 
 export const DateRangeOptions: React.FC<PropTypes> = () => {
   const [selectedOption, setSelectedOption] = useState<DateRangeButtonOptions>(DateRangeButtonOptions.TODAY);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(saveDateRange(selectedOption));
+  }, [dispatch, selectedOption]);
 
   return (
     <div className={s.Root}>
