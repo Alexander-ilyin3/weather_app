@@ -8,6 +8,8 @@ module.exports = {
       '@features': path.resolve(__dirname, 'src/features'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+      '@services': path.resolve(__dirname, 'src/services'),
+      '@api': path.resolve(__dirname, 'src/api'),
     },
   },
 };

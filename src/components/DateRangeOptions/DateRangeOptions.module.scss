@@ -9,10 +9,16 @@
     align-items: center;
     gap: 8px;
 
+    max-width: 160px;
+
     border: 1px solid $gray-100;
 
     background-color: $white;
     color: $main_blue;
+
+    &:hover {
+      border: 1px solid $main_blue;
+    }
 
     &.Active {
       border-color: $main_blue;

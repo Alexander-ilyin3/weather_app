@@ -10,5 +10,12 @@
     background-color: $white;
 
     border-radius: $border-radius-24;
+
+    display: flex;
+
+    .WeatherInfoSection {
+      padding: 54px;
+      flex-grow: 1;
+    }
   }
 }

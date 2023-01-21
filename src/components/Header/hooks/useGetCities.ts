@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { CityDto } from '@api/models/cities.dto';
+import { CityDto } from '@api/cities/models/cities.dto';
 
 import { CitiesApi } from 'src/api';
 import config from 'src/config';

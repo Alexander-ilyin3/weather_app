@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios';
 
-import { ApiRequestService } from '../services/api-request/api-request';
+import { ApiRequestService } from '@services/api-request/api-request';
+
 import { CityDto } from './models/cities.dto';
 import { GetCountriesParams } from './models/cities.query';
 

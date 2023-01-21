@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import { CityDto } from '@api/models/cities.dto';
+import { CityDto } from '@api/cities/models/cities.dto';
 
 import { useThrottle } from '@utils/withThrottle';
 
 import { Autocomplete } from '../Autocomplete/Autocomplete';
-import { Button } from '../Button/Button';
 import { DateRangeOptions } from '../DateRangeOptions/DateRangeOptions';
+import { SearchButton } from '../SearchButton/SearchButton';
 // import { DateRangeOptions } from '../Select/DateRangeOptions';
 import { useGetCities } from './hooks/useGetCities';
 import { useAppDispatch } from 'src/hooks';
@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
           onItemSelect={onCitySelected}
         />
         <DateRangeOptions />
-        <Button>Search</Button>
+        <SearchButton />
       </header>
     </>
   );
