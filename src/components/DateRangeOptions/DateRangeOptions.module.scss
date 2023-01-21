@@ -1,0 +1,45 @@
+@import '/src/scss/main.scss';
+
+.Root {
+  display: flex;
+  gap: 8px;
+
+  .Button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid $gray-100;
+
+    background-color: $white;
+    color: $main_blue;
+
+    &.Active {
+      border-color: $main_blue;
+      background-image: $linear-gradient-light;
+    }
+
+    .Radio {
+      display: block;
+      border: 1px solid $main_blue;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      
+      &.Active::before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $main_blue;
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

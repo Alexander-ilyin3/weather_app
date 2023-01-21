@@ -1,4 +1,5 @@
-import React from 'react';
+import clsx from 'clsx';
+import React, { PropsWithChildren } from 'react';
 
 import s from './Button.module.scss';
 
@@ -6,12 +7,14 @@ type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButton
 type PropTypes = {
   label?: string;
   onClick?: () => void;
-} & ButtonProps;
+  classes?: string;
+} & ButtonProps &
+  PropsWithChildren;
 
-export const Button: React.FC<PropTypes> = ({ onClick, label }) => {
+export const Button: React.FC<PropTypes> = ({ onClick, label, classes, children }) => {
   return (
-    <button className={s.Root} onClick={onClick}>
-      {label}
+    <button className={clsx(s.Root, classes)} onClick={onClick}>
+      {children || label}
     </button>
   );
 };

@@ -39,6 +39,7 @@ export const Autocomplete = <T,>({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onFocus={() => setIsOpenFlag(true)}
+        autoComplete="off"
       />
       {!!autocompleteData.length && isOpenFlag && (
         <div>
