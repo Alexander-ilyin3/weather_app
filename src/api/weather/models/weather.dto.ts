@@ -1,3 +1,5 @@
+export type WeatherItemsCount = 8 | 40;
+
 export type WeatherInfoByTime = {
   clouds: { all: number };
   main: {
@@ -18,11 +20,14 @@ export type WeatherInfoByTime = {
       main: string;
     },
   ];
+
+  dt: number;
 };
 
 export type WeatherResponseDto = {
   city: {
     name: string;
   };
+  cnt: WeatherItemsCount;
   list: WeatherInfoByTime[];
 };
