@@ -1,0 +1,21 @@
+@import '/src/scss/main.scss';
+
+.Root {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    background-color: $white;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    background: $main_blue;
+    border-radius: 10px;
+    height: 1px;
+    width: 1px;
+  }
+}
