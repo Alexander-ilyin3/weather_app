@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { CityDto } from '@api/cities/models/cities.dto';
 
+import { resolveCityName } from '@utils/resolveCityName';
 import { useThrottle } from '@utils/withThrottle';
 
 import { DateRangeOptions } from '../DateRangeOptions/DateRangeOptions';
@@ -18,11 +19,10 @@ export const Header: React.FC = () => {
   const [value, setValue] = useState('');
   const throtteledValue = useThrottle(value);
   const dispatch = useAppDispatch();
-  // TODO: remove test data
-  // const cities: { name: string }[] = [{ name: 'One' }, { name: 'Two' }, { name: 'Three' }]; //useGetCities(throtteledValue);
   const cities = useGetCities(throtteledValue);
 
   const onCitySelected = (city: CityDto) => {
+    setValue(resolveCityName(city, true));
     dispatch(saveCity(city));
   };
 
