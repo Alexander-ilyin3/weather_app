@@ -13,6 +13,8 @@
 
     display: flex;
 
+    overflow: hidden;
+
     .WeatherInfoSection {
       display: flex;
       flex-grow: 1;

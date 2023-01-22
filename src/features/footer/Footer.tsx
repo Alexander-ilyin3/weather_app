@@ -32,6 +32,10 @@ export const Footer: React.FC = () => {
     });
   }, []);
 
+  if (!weatherResponse.value) {
+    return null;
+  }
+
   return (
     <div>
       <h1>Average Temperature</h1>

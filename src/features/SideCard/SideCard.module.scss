@@ -1,6 +1,21 @@
+@import 'src/scss/main.scss';
+
 .Root {
-  width: 362px;
-  min-height: 600px;
+  width: 350px;
+  height: 600px;
 
   flex-shrink: 0;
+
+  position: relative;
+
+  box-shadow: $shadow_light;
+  background-image: $linear-gradient-transparent;
+
+  border-radius: $border_radius_24;
+
+  img.BackgroundDecoration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }

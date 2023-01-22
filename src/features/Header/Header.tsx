@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <h1>Weather</h1>
+      <h1 className={s.Header}>Weather</h1>
       <header className={s.Root}>
         <Autocomplete
           label="Select City"

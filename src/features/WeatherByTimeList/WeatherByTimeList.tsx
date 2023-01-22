@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { WeatherTimeCard } from './components/weather-time-card/WeatherTimeCard';
 import { useMapToWeatherTimeCard } from './hook/useMapToWeatherTimeCard';
+import { EmptyState } from 'src/components/EmptyState/EmptyState';
 import { useAppSelector } from 'src/hooks';
 import { WeatherCardInfo } from 'src/models/WeatherCardInfo';
 import { weatherResponseSelector } from 'src/redux/selectors';
@@ -15,16 +16,20 @@ export const WeatherByTimeList: React.FC = () => {
 
   return (
     <div className={s.Root} id="weather-list">
-      {cardsInfo.map((cardInfo, i) => {
-        return (
-          <WeatherTimeCard
-            isSelected={selectedCard === cardInfo}
-            onClick={() => setSelectedCard(cardInfo)}
-            cardInfo={cardInfo}
-            key={i}
-          />
-        );
-      })}
+      {cardsInfo.length ? (
+        cardsInfo.map((cardInfo, i) => {
+          return (
+            <WeatherTimeCard
+              isSelected={selectedCard === cardInfo}
+              onClick={() => setSelectedCard(cardInfo)}
+              cardInfo={cardInfo}
+              key={i}
+            />
+          );
+        })
+      ) : (
+        <EmptyState />
+      )}
     </div>
   );
 };
