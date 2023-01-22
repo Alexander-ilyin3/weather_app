@@ -36,8 +36,8 @@ export const Header: React.FC = () => {
           value={value}
           onChange={(string) => setValue(string)}
           autocompleteData={cities}
-          RenderItem={({ name }) => {
-            return <div>{name}</div>;
+          RenderItem={(cityObj) => {
+            return <div>{resolveCityName(cityObj, true)}</div>;
           }}
           onItemSelect={onCitySelected}
         />
