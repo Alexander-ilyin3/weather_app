@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { getWeatherPicturePath } from './helpers/getWeatherPicturePath';
+import { getWeatherPicturePath } from '@utils/getWeatherPicturePath';
+
 import { WeatherCardInfo } from 'src/models/WeatherCardInfo';
 
 import s from './WeatherTimeCard.module.scss';

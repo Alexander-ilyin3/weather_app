@@ -2,20 +2,82 @@
 
 .Root {
   width: 350px;
-  height: 600px;
+  padding: 24px;
 
   flex-shrink: 0;
 
   position: relative;
 
   box-shadow: $shadow_light;
-  background-image: $linear-gradient-transparent;
 
-  border-radius: $border_radius_24;
+  background-image: url('../../../public/image/Background\ Decoration.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
 
-  img.BackgroundDecoration {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  .InfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    z-index: 1;
+
+    text-align: center;
+
+    .DateLabel {
+      font-size: 20px;
+      color: $gray-300;
+    }
+
+    .TopInfoContainer {
+      display: flex;
+      flex-direction: column;
+
+      & > span {
+        display: block;
+      }
+      .CityLabel {
+        font-size: 34px;
+        color: $gray-900;
+      }
+      .TemperatureLabel {
+        font-size: 96px;
+        color: $main_blue;
+        margin: -10px 0;
+      }
+      .WeatherSummaryLabel {
+        font-size: 20px;
+        color: $gray-900;
+      }
+      .HighLowTemperatureLabel {
+        font-size: 20px;
+        color: $gray-300;
+        & > i {
+          color: $main_blue;
+        }
+      }
+    }
+
+    .BottomInfo {
+      display: flex;
+      width: 75%;
+      justify-content: space-between;
+
+      .BottomItemPair {
+        display: flex;
+        flex-direction: column;
+
+
+        .Label {
+          font-size: 12px;
+          color: $gray-300;
+        }
+        .Descripton {
+          font-size: 16px;
+          color: $main_blue;
+        }
+      }
+    }
   }
 }

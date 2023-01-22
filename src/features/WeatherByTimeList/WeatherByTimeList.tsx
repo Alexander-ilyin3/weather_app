@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { WeatherTimeCard } from './components/weather-time-card/WeatherTimeCard';
 import { useMapToWeatherTimeCard } from './hook/useMapToWeatherTimeCard';
 import { EmptyState } from 'src/components/EmptyState/EmptyState';
-import { useAppSelector } from 'src/hooks';
-import { WeatherCardInfo } from 'src/models/WeatherCardInfo';
-import { weatherResponseSelector } from 'src/redux/selectors';
+import { useAppDispatch, useAppSelector } from 'src/hooks';
+import { weatherCardSelector, weatherResponseSelector } from 'src/redux/selectors';
+import { saveWeatherCard } from 'src/redux/slices/weatherCard';
 
 import s from './WeatherByTimeList.module.scss';
 
 export const WeatherByTimeList: React.FC = () => {
   const weatherResponse = useAppSelector(weatherResponseSelector);
   const cardsInfo = useMapToWeatherTimeCard(weatherResponse.value);
-  const [selectedCard, setSelectedCard] = useState<WeatherCardInfo>();
+  const selectedCard = useAppSelector(weatherCardSelector);
+  const dispatch = useAppDispatch();
 
   return (
     <div className={s.Root} id="weather-list">
@@ -20,8 +21,8 @@ export const WeatherByTimeList: React.FC = () => {
         cardsInfo.map((cardInfo, i) => {
           return (
             <WeatherTimeCard
-              isSelected={selectedCard === cardInfo}
-              onClick={() => setSelectedCard(cardInfo)}
+              isSelected={selectedCard.value === cardInfo}
+              onClick={() => dispatch(saveWeatherCard(cardInfo))}
               cardInfo={cardInfo}
               key={i}
             />

@@ -6,15 +6,17 @@
   .EmptyState {
     width: 100%;
     & > div {
-      background-color: $white;
       width: 200px;
-      margin: 0 auto;
+      margin: 24px auto;
 
       display: flex;
       align-items: center;
       flex-direction: column;
 
+      border: 1px solid $main_blue_light;
       border-radius: $border_radius_24;
+
+      box-shadow: $shadow_light;
 
       h1 {
         font-size: 56;

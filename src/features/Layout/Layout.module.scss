@@ -1,11 +1,10 @@
 @import '/src/scss/main.scss';
 
 .Root {
-  padding: 104px 80px 0 80px;
+  padding: 32px 80px 0 80px;
   .Paper {
     max-width: 1536px;
     margin: 0 auto;
-    padding: 16px;
 
     background-color: $gray-25;
 

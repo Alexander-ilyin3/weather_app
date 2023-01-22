@@ -15,6 +15,7 @@ export type WeatherInfoByTime = {
   weather: [
     {
       icon: string;
+      main: string;
     },
   ];
 };
