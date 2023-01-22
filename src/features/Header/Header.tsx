@@ -4,11 +4,11 @@ import { CityDto } from '@api/cities/models/cities.dto';
 
 import { useThrottle } from '@utils/withThrottle';
 
-import { Autocomplete } from '../Autocomplete/Autocomplete';
 import { DateRangeOptions } from '../DateRangeOptions/DateRangeOptions';
 import { SearchButton } from '../SearchButton/SearchButton';
 // import { DateRangeOptions } from '../Select/DateRangeOptions';
 import { useGetCities } from './hooks/useGetCities';
+import { Autocomplete } from 'src/components/Autocomplete/Autocomplete';
 import { useAppDispatch } from 'src/hooks';
 import { saveCity } from 'src/redux/slices/cities';
 

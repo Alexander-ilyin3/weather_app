@@ -4,8 +4,8 @@ import { ApiRequestService } from '@services/api-request/api-request';
 
 import { WeatherResponseDto } from './models/weather.dto';
 import { GetWeatherParams } from './models/weather.query';
-import { DateRangeButtonOptions } from 'src/components/DateRangeOptions/DateRangeOptions';
 import config from 'src/config';
+import { DateRangeButtonOptions } from 'src/features/DateRangeOptions/DateRangeOptions';
 
 export abstract class WeatherApi {
   static async getWeather({ ...params }: GetWeatherParams): Promise<AxiosResponse<WeatherResponseDto>> {

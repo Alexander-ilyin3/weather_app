@@ -2,7 +2,7 @@ import React from 'react';
 
 import { WeatherApi } from '@api/index';
 
-import { Button } from '../Button/Button';
+import { Button } from 'src/components/Button/Button';
 import { useAppDispatch, useAppSelector } from 'src/hooks';
 import { selectedCitySelector, selectedDateRangeSelector } from 'src/redux/selectors';
 import { saveWeatherResponse } from 'src/redux/slices/weatherResponse';

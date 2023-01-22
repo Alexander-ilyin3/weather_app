@@ -1,4 +1,4 @@
-import { DateRangeButtonOptions } from 'src/components/DateRangeOptions/DateRangeOptions';
+import { DateRangeButtonOptions } from 'src/features/DateRangeOptions/DateRangeOptions';
 
 export type GetWeatherParams = {
   lat: number;
