@@ -42,6 +42,11 @@
     flex-direction: column;
     gap: 4px;
     align-items: center;
+
+    .Dash {
+      color: $main_blue; 
+      font-weight: 700;
+    }
   }
 
   .Temperature_label {

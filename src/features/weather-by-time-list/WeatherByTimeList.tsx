@@ -14,7 +14,7 @@ export const WeatherByTimeList: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<WeatherCardInfo>();
 
   return (
-    <div className={s.Root}>
+    <div className={s.Root} id="weather-list">
       {cardsInfo.map((cardInfo, i) => {
         return (
           <WeatherTimeCard

@@ -1,0 +1,39 @@
+@import 'src/scss/main.scss';
+
+.Paper {
+  background-color: $white;
+  width: 380px;
+  height: 100px;
+
+  padding: 0 24px;
+
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  border-radius: $border_radius_8;
+
+  position: relative;
+
+  .LocationContainer {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      display: block;
+    }
+  }
+
+  :global {
+    #average-temperature {
+      font-size: 56px;
+      color: $main_blue;
+    }
+  }
+
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

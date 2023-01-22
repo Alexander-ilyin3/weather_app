@@ -23,10 +23,16 @@ export const WeatherTimeCard: React.FC<PropTypes> = ({ cardInfo, isSelected, onC
       <h5>{timeLabel}</h5>
       <img src={weatherPicturePath}></img>
       <div className={s.DescriptionContainer}>
-        <span className={s.Temperature_label}>
-          {temp_min}° {temp_max}°
-        </span>
-        <span hidden data-temperature={temp}></span>
+        {temp_max === temp_min ? (
+          <span className={s.Temperature_label}>{Math.round(temp_max)}°</span>
+        ) : (
+          <span className={s.Temperature_label}>
+            {Math.round(temp_min)}
+            <span className={s.Dash}> — </span>
+            {Math.round(temp_max)}°
+          </span>
+        )}
+        <span hidden data-temperature={Math.round(temp)}></span>
         <span className={s.CityLabel}>{cityCountryLabel}</span>
       </div>
     </div>
