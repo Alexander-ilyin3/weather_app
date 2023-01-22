@@ -13,8 +13,6 @@ export const Footer: React.FC = () => {
 
   useEffect(() => {
     $('#weather-list').on('DOMSubtreeModified', function () {
-      console.log('changed');
-
       const stringArray = $('span[hidden][data-temperature]')
         .map((_index, element) => {
           // @ts-ignore
@@ -27,7 +25,7 @@ export const Footer: React.FC = () => {
         return accum + Number(nextValue);
       }, 0);
       const averageValue = Math.round(summ / itemCount);
-      console.log(itemCount, summ);
+
       $('#average-temperature').text(averageValue + '°');
     });
   }, []);

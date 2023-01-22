@@ -8,7 +8,6 @@ import config from 'src/config';
 export const useGetCities = (inputValue: string) => {
   const [cities, setCities] = useState<CityDto[]>([]);
   const getCities = useCallback(async () => {
-    console.log('evaluating...', inputValue);
     const response = await CitiesApi.getCities({ appid: config.appid, q: `${inputValue},,UA`, limit: 5 });
 
     return response;
@@ -25,7 +24,6 @@ export const useGetCities = (inputValue: string) => {
       if (response.status === 200) {
         setCities(response.data);
       }
-      console.log({ response });
     };
 
     request();
