@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { DateRangeButtonOptions } from 'src/components/DateRangeOptions/DateRangeOptions';
+import { DateRangeButtonOptions } from 'src/features/DateRangeOptions/DateRangeOptions';
 
 type InitialState = { value: null | DateRangeButtonOptions };
 
